@@ -3051,8 +3051,6 @@ button:not(:disabled) {
   top: 50%;
   z-index: 0;
   margin: 0 auto;
-  transition: all 0.5s ease;
-  transform: rotate(-10deg);
 }
 
 #topnav .menu-extras {
