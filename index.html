@@ -83,7 +83,8 @@
     <h2 class="sr-only" id="timeline-heading">The Story: timeline of saving Whittier Narrows</h2>
     <div class="sr-only" id="tl-live-region" role="status" aria-live="polite" aria-atomic="true"></div>
 
-    <!-- Sticky timeline nav -->
+    <!-- Timeline nav (sticky on mobile) -->
+    <div class="tl-sticky-nav" id="tl-sticky-nav">
     <div class="tl-nav" id="tl-nav">
       <div class="tl-nav-header">
         <span class="tl-nav-section-label">The Story</span>
@@ -137,6 +138,9 @@
     <div class="tl-dot-nav" id="tl-dot-nav">
       <div class="tl-dot-nav-inner">
         <span class="tl-dot-nav-label" id="tl-dot-label">The Place</span>
+        <span class="tl-nav-counter-inline tl-nav-counter-inline--mobile" aria-hidden="false">
+          <span id="tl-current-mobile">01</span><span class="tl-counter-sep"> / </span><span>07</span>
+        </span>
         <div class="tl-dots" id="tl-dots">
           <button class="tl-dot tl-dot--active" data-slide="0" aria-label="The Place 1939"></button>
           <button class="tl-dot" data-slide="1" aria-label="2006 The Threat"></button>
@@ -147,10 +151,14 @@
           <button class="tl-dot" data-slide="6" aria-label="2014–17 Victory"></button>
         </div>
       </div>
+      <div class="tl-nav-progress-wrap tl-nav-progress-wrap--mobile" aria-hidden="true">
+        <div class="tl-nav-progress" id="tl-nav-progress-mobile"></div>
+      </div>
       <div class="tl-swipe-hint-bar" id="tl-swipe-hint-bar" aria-hidden="true">
         <span>&#8592;&nbsp; swipe to navigate &nbsp;&#8594;</span>
       </div>
     </div>
+    </div><!-- /.tl-sticky-nav -->
     <!-- Slides track -->
     <div class="tl-track-outer" id="tl-track-outer" aria-live="off">
       <div class="tl-track" id="tl-track" role="group" aria-label="Timeline slides">
@@ -315,13 +323,11 @@
         </div>
 
       </div><!-- end .tl-track -->
+      <div class="tl-arrows" id="tl-arrows">
+        <button class="tl-arrow" id="tl-prev" aria-label="Previous timeline chapter" disabled aria-disabled="true">&#8592;</button>
+        <button class="tl-arrow" id="tl-next" aria-label="Next timeline chapter">&#8594;</button>
+      </div>
     </div><!-- end .tl-track-outer -->
-
-    <!-- Arrow navigation — inside track-outer so it's always visible within the slide area -->
-        <div class="tl-arrows" id="tl-arrows">
-      <button class="tl-arrow" id="tl-prev" aria-label="Previous timeline chapter" disabled aria-disabled="true">&#8592;</button>
-      <button class="tl-arrow" id="tl-next" aria-label="Next timeline chapter">&#8594;</button>
-    </div>
   </section>
   <!-- ============================================================
        QUOTE SECTION

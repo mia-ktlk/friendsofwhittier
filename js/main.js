@@ -22,13 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---- Set CSS variables for header and timeline nav heights ---- */
   function setHeights() {
     const headerEl = document.querySelector('.site-header');
-    const navEl = document.getElementById('tl-nav');
-    const dotNavEl = document.getElementById('tl-dot-nav');
+    const stickyNavEl = document.getElementById('tl-sticky-nav');
     const headerH = headerEl?.offsetHeight || 72;
-    let navH = navEl?.offsetHeight || 0;
-    if (dotNavEl && window.getComputedStyle(dotNavEl).display !== 'none') {
-      navH += dotNavEl.offsetHeight;
-    }
+    const navH = stickyNavEl?.offsetHeight
+      || document.getElementById('tl-nav')?.offsetHeight
+      || 110;
     document.documentElement.style.setProperty('--header-h', headerH + 'px');
     document.documentElement.style.setProperty('--tl-nav-h', navH + 'px');
   }
@@ -116,13 +114,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateTimelineControls(index);
 
+    const slideNum = String(index + 1).padStart(2, '0');
     if (currentLabel) {
-      currentLabel.textContent = String(index + 1).padStart(2, '0');
+      currentLabel.textContent = slideNum;
+    }
+    const currentMobile = document.getElementById('tl-current-mobile');
+    if (currentMobile) {
+      currentMobile.textContent = slideNum;
     }
 
     if (navProgress) {
       const pct = totalSlides > 1 ? (index / (totalSlides - 1)) * 100 : 100;
       navProgress.style.width = pct + '%';
+      const navProgressMobile = document.getElementById('tl-nav-progress-mobile');
+      if (navProgressMobile) navProgressMobile.style.width = pct + '%';
     }
 
     const activeNavItem = navItems[index];

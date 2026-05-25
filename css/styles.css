@@ -423,6 +423,9 @@ button:focus:not(:focus-visible) {
 /* Swipe hint — hidden on desktop, shown on mobile via media query */
 .tl-swipe-hint { display: none; }
 .tl-dot-nav { display: none; }
+.tl-nav-counter-inline--mobile { display: none; }
+.tl-nav-progress-wrap--mobile { display: none; }
+.tl-sticky-nav { display: block; }
 
 /* ---- Slides Track ---- */
 .tl-track-outer {
@@ -1449,41 +1452,59 @@ button:focus:not(:focus-visible) {
     line-height: 1.2;
   }
 
-  /* Timeline — flex column so nav + slides share viewport without clipping */
+  /* Timeline — natural height: full text visible, page scrolls */
   #timeline {
-    height: calc(100dvh - var(--header-h, 52px));
-    display: flex;
-    flex-direction: column;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    display: block;
   }
 
+  .tl-sticky-nav {
+    position: sticky;
+    top: var(--header-h, 52px);
+    z-index: 500;
+    background: var(--black);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Timeline nav — hide desktop header row on mobile (counter moves to dot nav) */
   .tl-nav {
-    flex-shrink: 0;
+    box-shadow: none;
   }
-
-  /* Timeline nav — hide full nav on mobile, show dot nav instead */
   .tl-nav-items { display: none; }
-  .tl-nav-header {
-    padding: 0.5rem 1rem;
-    gap: 0.75rem;
-    min-height: 2.25rem;
-  }
+  .tl-nav-header { display: none; }
 
   /* Dot nav — mobile only */
   .tl-dot-nav {
     display: flex;
     flex-direction: column;
-    flex-shrink: 0;
     background: var(--black);
     border-bottom: 1px solid rgba(255,255,255,0.1);
-    padding: 0.5rem 1rem 0.35rem;
-    gap: 0.25rem;
+    padding: 0.55rem 1rem 0.4rem;
+    gap: 0.2rem;
+  }
+  .tl-nav-counter-inline--mobile {
+    display: flex;
+    flex-shrink: 0;
+    font-size: 0.75rem;
+  }
+  #tl-current-mobile {
+    font-size: 1.1rem;
+    color: #ffffff;
+  }
+  .tl-nav-progress-wrap--mobile {
+    display: block;
+    height: 2px;
+    margin-top: 0.35rem;
   }
   .tl-dot-nav-inner {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 0.75rem;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
   }
   .tl-dot-nav-label {
     font-family: var(--font-body);
@@ -1539,41 +1560,54 @@ button:focus:not(:focus-visible) {
     pointer-events: none;
   }
 
-  /* Slides — scrollable content with arrows in a footer bar (no overlap) */
+  /* Slides — full content height, no clipping */
   .tl-track-outer {
-    flex: 1;
-    min-height: 0;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
   }
 
   .tl-track {
-    flex: 1;
-    min-height: 0;
     height: auto;
+    align-items: stretch;
   }
 
   .tl-slide {
-    height: 100%;
+    height: auto;
     max-height: none;
     min-height: 0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    overflow: visible;
+    display: block;
+    align-self: stretch;
   }
 
   .tl-slide-inner {
-    flex: 1;
-    min-height: 0;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    padding: 1.25rem var(--page-margin) 1rem;
+    display: block;
+    align-items: flex-start;
+    overflow: visible;
+    padding: 1.5rem var(--page-margin) 1.25rem;
   }
 
   .tl-slide-content {
     grid-template-columns: 1fr;
     gap: 1.25rem;
+    align-items: start;
+  }
+
+  .tl-slide-text {
+    gap: 0.75rem;
+  }
+
+  .tl-slide-heading {
+    font-size: clamp(1.75rem, 7vw, 2.25rem);
+    line-height: 1.15;
+    overflow: visible;
+  }
+
+  .tl-slide-text p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    max-width: none;
   }
 
   .tl-slide-content--victory {
@@ -1584,10 +1618,6 @@ button:focus:not(:focus-visible) {
 
   .tl-slide-img-wrap img {
     height: 200px;
-  }
-
-  .tl-slide-heading {
-    font-size: clamp(1.6rem, 6vw, 2.2rem);
   }
 
   .tl-heading-victory {
