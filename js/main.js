@@ -32,6 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   requestAnimationFrame(() => { setHeights(); });
   window.addEventListener('resize', setHeights);
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(setHeights);
+  }
 
   /* ============================================================
      TIMELINE
