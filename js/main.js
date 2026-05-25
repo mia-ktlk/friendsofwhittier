@@ -21,8 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---- Set CSS variables for header and timeline nav heights ---- */
   function setHeights() {
-    const headerH = document.querySelector('.site-header')?.offsetHeight || 72;
-    const navH = document.querySelector('.tl-nav')?.offsetHeight || 110;
+    const headerEl = document.querySelector('.site-header');
+    const navEl = document.getElementById('tl-nav');
+    const dotNavEl = document.getElementById('tl-dot-nav');
+    const headerH = headerEl?.offsetHeight || 72;
+    let navH = navEl?.offsetHeight || 0;
+    if (dotNavEl && window.getComputedStyle(dotNavEl).display !== 'none') {
+      navH += dotNavEl.offsetHeight;
+    }
     document.documentElement.style.setProperty('--header-h', headerH + 'px');
     document.documentElement.style.setProperty('--tl-nav-h', navH + 'px');
   }

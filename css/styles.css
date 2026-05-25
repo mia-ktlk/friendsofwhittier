@@ -106,7 +106,8 @@ button:focus:not(:focus-visible) {
   z-index: 600;
   background: var(--off-white);
   border-bottom: 1px solid rgba(0,0,0,0.1);
-  height: var(--header-h);
+  min-height: var(--header-h);
+  padding-top: env(safe-area-inset-top, 0px);
 }
 .header-inner {
   display: grid;
@@ -271,7 +272,7 @@ button:focus:not(:focus-visible) {
    TIMELINE SECTION
    ============================================================ */
 #timeline {
-  height: calc(100vh - var(--header-h, 72px));
+  height: calc(100dvh - var(--header-h, 72px));
   overflow: hidden;
   background: var(--off-white);
 }
@@ -442,8 +443,8 @@ button:focus:not(:focus-visible) {
   flex: 0 0 100%;
   width: 100%;
   /* Fill the remaining height inside the sticky #timeline after the nav */
-  height: calc(100vh - var(--header-h, 72px) - var(--tl-nav-h, 110px));
-  max-height: calc(100vh - var(--header-h, 72px) - var(--tl-nav-h, 110px));
+  height: calc(100dvh - var(--header-h, 72px) - var(--tl-nav-h, 110px));
+  max-height: calc(100dvh - var(--header-h, 72px) - var(--tl-nav-h, 110px));
   overflow: hidden;
   display: flex;
   align-items: stretch;
@@ -1422,13 +1423,17 @@ button:focus:not(:focus-visible) {
    ============================================================ */
 @media (max-width: 768px) {
   :root {
-    --header-h: 60px;
     --page-margin: 1.25rem;
   }
 
   /* Header — collapse to title + hamburger on mobile */
+  .site-header {
+    height: auto;
+  }
   .header-inner {
     grid-template-columns: 1fr auto;
+    min-height: 52px;
+    padding: 0.65rem 0;
   }
   .header-nav--left  { display: none; }
   .header-nav--right { display: none; }
@@ -1439,20 +1444,39 @@ button:focus:not(:focus-visible) {
     text-align: left;
   }
   .header-eyebrow { display: none; }
-  .header-title { font-size: 1rem; }
+  .header-title {
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+
+  /* Timeline — flex column so nav + slides share viewport without clipping */
+  #timeline {
+    height: calc(100dvh - var(--header-h, 52px));
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tl-nav {
+    flex-shrink: 0;
+  }
 
   /* Timeline nav — hide full nav on mobile, show dot nav instead */
   .tl-nav-items { display: none; }
-  .tl-nav-header { padding: 0.35rem 1rem; }
+  .tl-nav-header {
+    padding: 0.5rem 1rem;
+    gap: 0.75rem;
+    min-height: 2.25rem;
+  }
 
   /* Dot nav — mobile only */
   .tl-dot-nav {
     display: flex;
     flex-direction: column;
+    flex-shrink: 0;
     background: var(--black);
     border-bottom: 1px solid rgba(255,255,255,0.1);
-    padding: 0.55rem 1.25rem 0.45rem;
-    gap: 0.3rem;
+    padding: 0.5rem 1rem 0.35rem;
+    gap: 0.25rem;
   }
   .tl-dot-nav-inner {
     display: flex;
@@ -1515,13 +1539,41 @@ button:focus:not(:focus-visible) {
     pointer-events: none;
   }
 
-  /* Slides */
-  .tl-slide { min-height: auto; }
-  .tl-slide-inner { padding: 2rem 1.25rem 3.5rem; }
+  /* Slides — scrollable content with arrows in a footer bar (no overlap) */
+  .tl-track-outer {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .tl-track {
+    flex: 1;
+    min-height: 0;
+    height: auto;
+  }
+
+  .tl-slide {
+    height: 100%;
+    max-height: none;
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tl-slide-inner {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 1.25rem var(--page-margin) 1rem;
+  }
 
   .tl-slide-content {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
   .tl-slide-content--victory {
@@ -1542,12 +1594,36 @@ button:focus:not(:focus-visible) {
     font-size: clamp(2rem, 8vw, 3rem);
   }
 
-  .tl-stats { gap: 1.2rem; }
+  .tl-stats {
+    gap: 1rem 1.5rem;
+    padding-bottom: 0.25rem;
+  }
+
   .tl-stat-num { font-size: 1.4rem; }
 
-  .tl-arrow { bottom: 0.75rem; }
-  .tl-arrow-prev { left: 1.25rem; }
-  .tl-arrow-next { left: calc(1.25rem + 52px); }
+  /* Prev/next sit below slide content, not on top of stats */
+  .tl-arrows {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    flex-shrink: 0;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 0.6rem var(--page-margin) calc(0.75rem + env(safe-area-inset-bottom, 0px));
+    margin: 0;
+    background: var(--cream);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .tl-arrows.dark {
+    background: var(--black);
+    border-top-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .tl-arrow {
+    width: 44px;
+    height: 44px;
+  }
 
   /* Quote */
   .quote-text { font-size: clamp(1.6rem, 6vw, 2.5rem); }
