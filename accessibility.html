@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessibility Statement - Friends of Whittier Narrows</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .legal-page {
+      padding: 120px 5vw 80px;
+      max-width: 800px;
+      margin: 0 auto;
+      color: #fff;
+      background: #0a0a0a;
+      min-height: 100vh;
+    }
+    .legal-page h1 {
+      font-family: "Domaine Display", Georgia, serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 2rem;
+      line-height: 1.1;
+    }
+    .legal-page h2 {
+      font-family: "Domaine Display", Georgia, serif;
+      font-size: 1.8rem;
+      margin: 2.5rem 0 1rem;
+    }
+    .legal-page p, .legal-page ul {
+      font-family: "Inter", -apple-system, sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    .legal-page ul {
+      padding-left: 1.5rem;
+    }
+    .legal-page li {
+      margin-bottom: 0.5rem;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 2rem;
+      font-family: "Inter", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+    }
+    .back-link:hover {
+      color: #fff;
+    }
+    
+    /* Form Styles */
+    .contact-form {
+      margin-top: 3rem;
+      background: rgba(255,255,255,0.03);
+      padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+    }
+    .contact-form label {
+      display: block;
+      font-family: "Inter", sans-serif;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+      color: rgba(255,255,255,0.7);
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      background: rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      padding: 1rem;
+      font-family: "Inter", sans-serif;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      border-radius: 4px;
+    }
+    .contact-form input:focus, .contact-form textarea:focus {
+      outline: 3px solid #4ade80;
+      outline-offset: 2px;
+      border-color: #4ade80;
+    }
+    .back-link:focus-visible,
+    .contact-form button:focus-visible {
+      outline: 3px solid #4ade80;
+      outline-offset: 2px;
+    }
+    .contact-form textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+    .contact-form button {
+      background: #fff;
+      color: #000;
+      border: none;
+      padding: 1rem 2rem;
+      font-family: "Inter", sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background 0.2s ease;
+    }
+    .contact-form button:hover {
+      background: #4ade80;
+    }
+    .contact-form button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
+    [data-fs-error] {
+      color: #ef4444;
+      font-size: 0.9rem;
+      margin-top: -1rem;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+    [data-fs-success] {
+      color: #4ade80;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background: rgba(74, 222, 128, 0.1);
+      border-radius: 4px;
+      display: none;
+    }
+  </style>
+</head>
+<body style="background: #0a0a0a;">
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <main id="main-content" class="legal-page">
+    <a href="index.html" class="back-link">← Back to Home</a>
+    
+    <h1>Accessibility Statement</h1>
+    <p><em>Effective Date: May 1, 2021</em></p>
+
+    <p>At Friends of Whittier Narrows, we believe the story of community organizing and environmental protection should be accessible to everyone. We are committed to making our archival website as accessible and inclusive as possible for people of all abilities.</p>
+
+    <h2>Our Commitment</h2>
+    <p>We aim to ensure our website is designed and developed in alignment with best practices and standards defined by the Web Content Accessibility Guidelines (WCAG) 2.1, Level AA, wherever feasible.</p>
+    <p>This includes efforts to:</p>
+    <ul>
+      <li>Use clear, legible fonts and sufficient color contrast, particularly against our dark themes</li>
+      <li>Ensure our site is navigable by screen readers and keyboard-only users</li>
+      <li>Provide alternative text for historical images, protest photos, and documents</li>
+      <li>Ensure animations and transitions do not cause discomfort</li>
+    </ul>
+
+    <h2>Ongoing Improvements</h2>
+    <p>We recognize that accessibility is an ongoing journey. We regularly review our website and content to identify and implement improvements that make our online archive more usable and welcoming for all.</p>
+
+    <h2>Need Help or Have Feedback?</h2>
+    <p>If you experience any difficulty accessing any part of our website or have accessibility-related suggestions, we genuinely want to know. We value your input and will make reasonable efforts to resolve any accessibility issues.</p>
+    <p>Please reach out using the form below:</p>
+
+    <div class="contact-form">
+      <div data-fs-success id="success-message" role="status" aria-live="polite">Thank you for your feedback. We will review it shortly.</div>
+      <div data-fs-error="form" role="alert"></div>
+
+      <form id="accessibility-form" novalidate>
+        <label for="email">Email Address <span aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
+        <input type="email" id="email" name="email" required autocomplete="email" aria-required="true" data-fs-field />
+        <span data-fs-error="email" role="alert"></span>
+
+        <label for="message">Your Message <span aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
+        <textarea id="message" name="message" required aria-required="true" data-fs-field placeholder="Please describe the accessibility issue or suggestion..."></textarea>
+        <span data-fs-error="message" role="alert"></span>
+
+        <button type="submit" data-fs-submit-btn>Send Feedback</button>
+      </form>
+    </div>
+
+  </main>
+
+  <!-- Formspree Vanilla JS SDK -->
+  <script>
+    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+    formspree('initForm', { formElement: '#accessibility-form', formId: 'xjgzawod' });
+    
+    // Show success message styling manually if formspree succeeds
+    document.getElementById('accessibility-form').addEventListener('submit', function() {
+      const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.target.style.display !== 'none' && mutation.target.innerText) {
+            mutation.target.style.display = 'block';
+          }
+        });
+      });
+      observer.observe(document.getElementById('success-message'), { attributes: true, childList: true });
+    });
+  </script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Friends of Whittier Narrows</title>
+  <meta name="description" content="The story of how a community saved Whittier Narrows Natural Area — Los Angeles' hidden wilderness." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=Caveat:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Open Graph / Social Share -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Friends of Whittier Narrows" />
+  <meta property="og:description" content="The story of how a community saved Whittier Narrows Natural Area — Los Angeles' hidden wilderness." />
+  <meta property="og:image" content="images/og-preview.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Friends of Whittier Narrows — An Archive of the Fight to Protect a Wild Place in Los Angeles" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Friends of Whittier Narrows" />
+  <meta name="twitter:description" content="The story of how a community saved Whittier Narrows Natural Area — Los Angeles' hidden wilderness." />
+  <meta name="twitter:image" content="images/og-preview.jpg" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ============================================================
+       SITE HEADER — minimal, just the title
+       ============================================================ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <!-- Left nav -->
+      <nav class="header-nav header-nav--left" aria-label="Primary navigation">
+        <a href="#quote">Story</a>
+        <a href="#contributors">Contributors</a>
+      </nav>
+      <!-- Centered title -->
+      <div class="header-title-block">
+        <span class="header-eyebrow">San Gabriel River &middot; Los Angeles &middot; Est. 1939</span>
+        <h1 class="header-title">Friends of Whittier Narrows</h1>
+      </div>
+      <!-- Right nav -->
+      <nav class="header-nav header-nav--right" aria-label="Section links">
+        <a href="#gallery">The Photo Gallery</a>
+      </nav>
+      <!-- Mobile hamburger -->
+      <button class="header-hamburger" id="header-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <!-- Mobile drawer -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Mobile navigation menu">
+    <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close menu">&times;</button>
+    <nav class="mobile-drawer-nav" aria-label="Mobile navigation">
+      <a href="#quote">Story</a>
+      <a href="#contributors">Contributors</a>
+      <a href="#gallery">The Photo Gallery</a>
+    </nav>
+  </div>
+  <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
+
+  <!-- ============================================================
+       TIMELINE — full-width, starts immediately below header
+       The .tl-scroll-wrapper is tall (100vh × slides) so the
+       browser has scroll distance. #timeline is sticky inside
+       it, staying pinned while scroll progress drives the slides.
+       ============================================================ -->
+  <main id="main-content">
+
+  <section id="timeline" aria-labelledby="timeline-heading" aria-roledescription="carousel">
+    <h2 class="sr-only" id="timeline-heading">The Story: timeline of saving Whittier Narrows</h2>
+    <div class="sr-only" id="tl-live-region" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Sticky timeline nav -->
+    <div class="tl-nav" id="tl-nav">
+      <div class="tl-nav-header">
+        <span class="tl-nav-section-label">The Story</span>
+        <div class="tl-nav-progress-wrap" role="progressbar" aria-valuemin="1" aria-valuemax="7" aria-valuenow="1" aria-label="Timeline progress" id="tl-progress-bar">
+          <div class="tl-nav-progress" id="tl-nav-progress"></div>
+        </div>
+        <span class="tl-nav-counter-inline">
+          <span id="tl-current">01</span><span class="tl-counter-sep"> / </span><span>07</span>
+        </span>
+      </div>
+      <div class="tl-nav-items" role="tablist" aria-label="Timeline chapters">
+        <button class="tl-nav-item active" data-slide="0" role="tab" id="tl-tab-0" aria-selected="true" aria-controls="tl-slide-0">
+          <span class="tl-nav-year">The Place</span>
+          <span class="tl-nav-label">1939</span>
+          <span class="tl-nav-underline"></span>
+        </button>
+        <button class="tl-nav-item" data-slide="1" role="tab" id="tl-tab-1" aria-selected="false" aria-controls="tl-slide-1">
+          <span class="tl-nav-year">2006</span>
+          <span class="tl-nav-label">The Threat</span>
+          <span class="tl-nav-underline"></span>
+        </button>
+        <button class="tl-nav-item" data-slide="2" role="tab" id="tl-tab-2" aria-selected="false" aria-controls="tl-slide-2">
+          <span class="tl-nav-year">2007</span>
+          <span class="tl-nav-label">Alert &amp; Action</span>
+          <span class="tl-nav-underline"></span>
+        </button>
+        <button class="tl-nav-item" data-slide="3" role="tab" id="tl-tab-3" aria-selected="false" aria-controls="tl-slide-3">
+          <span class="tl-nav-year">2008–10</span>
+          <span class="tl-nav-label">Organizing</span>
+          <span class="tl-nav-underline"></span>
+        </button>
+        <button class="tl-nav-item" data-slide="4" role="tab" id="tl-tab-4" aria-selected="false" aria-controls="tl-slide-4">
+          <span class="tl-nav-year">2010–11</span>
+          <span class="tl-nav-label">Petition</span>
+          <span class="tl-nav-underline"></span>
+        </button>
+        <button class="tl-nav-item" data-slide="5" role="tab" id="tl-tab-5" aria-selected="false" aria-controls="tl-slide-5">
+          <span class="tl-nav-year">Feb 2011</span>
+          <span class="tl-nav-label">The Trial</span>
+          <span class="tl-nav-underline"></span>
+        </button>
+        <button class="tl-nav-item" data-slide="6" role="tab" id="tl-tab-6" aria-selected="false" aria-controls="tl-slide-6">
+          <span class="tl-nav-year">2014–17</span>
+          <span class="tl-nav-label">Victory</span>
+          <span class="tl-nav-underline"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile dot nav (replaces full nav on small screens) -->
+    <div class="tl-dot-nav" id="tl-dot-nav">
+      <div class="tl-dot-nav-inner">
+        <span class="tl-dot-nav-label" id="tl-dot-label">The Place</span>
+        <div class="tl-dots" id="tl-dots">
+          <button class="tl-dot tl-dot--active" data-slide="0" aria-label="The Place 1939"></button>
+          <button class="tl-dot" data-slide="1" aria-label="2006 The Threat"></button>
+          <button class="tl-dot" data-slide="2" aria-label="2007 Alert & Action"></button>
+          <button class="tl-dot" data-slide="3" aria-label="2008–10 Organizing"></button>
+          <button class="tl-dot" data-slide="4" aria-label="2010–11 Petition"></button>
+          <button class="tl-dot" data-slide="5" aria-label="Feb 2011 The Trial"></button>
+          <button class="tl-dot" data-slide="6" aria-label="2014–17 Victory"></button>
+        </div>
+      </div>
+      <div class="tl-swipe-hint-bar" id="tl-swipe-hint-bar" aria-hidden="true">
+        <span>&#8592;&nbsp; swipe to navigate &nbsp;&#8594;</span>
+      </div>
+    </div>
+    <!-- Slides track -->
+    <div class="tl-track-outer" id="tl-track-outer" aria-live="off">
+      <div class="tl-track" id="tl-track" role="group" aria-label="Timeline slides">
+
+        <!-- SLIDE 0: THE PLACE -->
+        <div class="tl-slide tl-slide--light" data-index="0" id="tl-slide-0" role="tabpanel" aria-labelledby="tl-tab-0">
+          <div class="tl-slide-inner">
+            <div class="tl-slide-content">
+              <div class="tl-slide-text">
+                <span class="tl-slide-chapter">The Place</span>
+                <h2 class="tl-slide-heading">A Piece of Wild<br>Los Angeles.</h2>
+                <p>In the midst of overdeveloped Greater Los Angeles, exists a stretch of the San Gabriel River in the last 40 miles from the San Gabriel Mountains to the ocean. It passes through the Whittier Narrows Natural Area.</p>
+                <p>The Natural Area has over 300 species of birds, two Endangered, others Threatened and of Special Concern. It was described by a local woman whose family did not travel for vacations as, <em>"My Yosemite."</em></p>
+                <p>A young local man said when he visited, he was in awe to see more than one tree together like a forest. The core area was set aside by the National Audubon Society as a preserve in 1939 — the first Audubon center west of the Mississippi. The Gabrieleño Band of Mission Indians Kizh Nation calls it their historical sacred land.</p>
+                <div class="tl-stats">
+                  <div class="tl-stat"><span class="tl-stat-num">300+</span><span class="tl-stat-label">Bird Species</span></div>
+                  <div class="tl-stat"><span class="tl-stat-num">1939</span><span class="tl-stat-label">Year Preserved</span></div>
+                  <div class="tl-stat"><span class="tl-stat-num">2</span><span class="tl-stat-label">Endangered Species</span></div>
+                </div>
+              </div>
+              <div class="tl-slide-media tl-slide-media--map">
+                <div class="tl-map-wrap" id="tl-map-wrap">
+                  <img src="images/WhittierNarrows-02.svg" alt="Hand-drawn map of Whittier Narrows Natural Area along the San Gabriel River" class="tl-map-svg" id="tl-map-svg" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 1: THE THREAT -->
+        <div class="tl-slide tl-slide--dark" data-index="1" id="tl-slide-1" role="tabpanel" aria-labelledby="tl-tab-1" aria-hidden="true">
+          <div class="tl-slide-inner">
+            <div class="tl-slide-content">
+              <div class="tl-slide-text">
+                <span class="tl-slide-chapter">The Threat — 2006</span>
+                <h2 class="tl-slide-heading">They Planned to<br>Demolish Everything.</h2>
+                <p>In the fall of 2006, Grace Allen, president of the Whittier Narrows Nature Center Associates, alerted others about a multi-government agency — The San Gabriel River Discovery Center Authority (DC). They were planning to demolish the Nature Center and replace it with a mega building complex.</p>
+                <p>The project would eliminate dozens of trees for the preferred option: a 20,000 square foot main building with a 114-space parking lot.</p>
+                <div class="tl-stats">
+                  <div class="tl-stat"><span class="tl-stat-num">$22M</span><span class="tl-stat-label">Public Tax Dollars</span></div>
+                  <div class="tl-stat"><span class="tl-stat-num">20,000</span><span class="tl-stat-label">Sq Ft Building</span></div>
+                  <div class="tl-stat"><span class="tl-stat-num">114</span><span class="tl-stat-label">Parking Spaces</span></div>
+                </div>
+              </div>
+              <div class="tl-slide-media tl-slide-media--map">
+                <div class="tl-map-wrap" id="tl-bulldozer-wrap">
+                  <img src="images/BullDozer.svg" alt="Illustration of a bulldozer clearing trees at Whittier Narrows" class="tl-map-svg tl-bulldozer-svg" id="tl-bulldozer-svg" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 2: ALERT & ACTION -->
+        <div class="tl-slide tl-slide--light" data-index="2" id="tl-slide-2" role="tabpanel" aria-labelledby="tl-tab-2" aria-hidden="true">
+          <div class="tl-slide-inner">
+            <div class="tl-slide-content">
+              <div class="tl-slide-text">
+                <span class="tl-slide-chapter">Alert &amp; Action — 2007</span>
+                <h2 class="tl-slide-heading">Friends Is<br>Formed.</h2>
+                <p>Among the initial people recruited by Grace Allen were a university professor biologist, nature center volunteers including local bird expert Ed Barajas. In September 2006 we participated in the Scoping Meeting for the DC, a requirement of the California Environmental Quality Act.</p>
+                <p>At first, what became Friends of the Whittier Narrows Natural Area was an informal group. But in 2007 we thought we needed a lawsuit to stop them and had to raise funds for it. In August of 2007, we formed the nonprofit 501(c)3 Friends of Whittier Narrows Natural Area.</p>
+              </div>
+              <div class="tl-slide-media">
+                <div class="tl-slide-img-wrap">
+                  <img src="images/localYoungpeople.jpg" alt="Local young people exploring Whittier Narrows Natural Area" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 3: ORGANIZING -->
+        <div class="tl-slide tl-slide--dark" data-index="3" id="tl-slide-3" role="tabpanel" aria-labelledby="tl-tab-3" aria-hidden="true">
+          <div class="tl-slide-inner">
+            <div class="tl-slide-content">
+              <div class="tl-slide-text">
+                <span class="tl-slide-chapter">Organizing — 2008–2010</span>
+                <h2 class="tl-slide-heading">Taking the<br>Fight Public.</h2>
+                <p>During these years, Friends continued to provide information to the community. We organized art shows, poetry readings, community picnics, and went to city council meetings. We spoke at schools and intervened at public meetings.</p>
+                <p>On one public Earth Day at the Sanitation District, officials threatened us and told us to leave. We informed them of our free speech rights and stayed.</p>
+                <p>From 2007 and 2008 the Significant Ecological Area Technical Advisory Committee (SEATAC) of the Los Angeles County Department of Regional Planning met several times on the DC project. On May 5, 2008, SEATAC voted not to recommend the project.</p>
+                <div class="tl-stats">
+                  <div class="tl-stat"><span class="tl-stat-num">May 2008</span><span class="tl-stat-label">SEATAC Votes Against</span></div>
+                </div>
+              </div>
+              <div class="tl-slide-media">
+                <div class="tl-slide-img-wrap">
+                  <img src="images/afterPicket.jpg" alt="Community members gathered after a picket at Whittier Narrows" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 4: PETITION & PRESSURE -->
+        <div class="tl-slide tl-slide--light" data-index="4" id="tl-slide-4" role="tabpanel" aria-labelledby="tl-tab-4" aria-hidden="true">
+          <div class="tl-slide-inner">
+            <div class="tl-slide-content">
+              <div class="tl-slide-text">
+                <span class="tl-slide-chapter">Petition &amp; Pressure — 2010–2011</span>
+                <h2 class="tl-slide-heading">1,100 Voices<br>Against.</h2>
+                <p>In January 2010, the DC voted to build their second largest alternative: a 14,000 sq ft facility and 114-space parking lot. In the vote they recognized destruction of existing natural area, affecting endangered birds, use of more global water, and contributing to climate change. Their rationalization was that it was more "important for the children."</p>
+                <p>In 2010, the Kizh Nation joined the fight to save their sacred land at Whittier Narrows. In 2011, we submitted a petition against the DC signed by 1,100 people. During this time the DC was setting up unannounced presentations at city council, school board and campus meetings — so that Friends could not intervene. But we found out about many anyway because we kept tabs on internet announcements posted at the last minute.</p>
+                <div class="tl-stats">
+                  <div class="tl-stat"><span class="tl-stat-num">1,100</span><span class="tl-stat-label">Petition Signatures</span></div>
+                  <div class="tl-stat"><span class="tl-stat-num">2010</span><span class="tl-stat-label">Kizh Nation Joins</span></div>
+                </div>
+              </div>
+              <div class="tl-slide-media">
+                <div class="tl-slide-img-wrap">
+                  <img src="images/kizhcheif.jpeg" alt="Kizh Nation chief speaking about protecting sacred land at Whittier Narrows" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 5: THE TRIAL -->
+        <div class="tl-slide tl-slide--dark" data-index="5" id="tl-slide-5" role="tabpanel" aria-labelledby="tl-tab-5" aria-hidden="true">
+          <div class="tl-slide-inner">
+            <div class="tl-slide-content">
+              <div class="tl-slide-text">
+                <span class="tl-slide-chapter">The Trial — February 2011</span>
+                <h2 class="tl-slide-heading">"The Project<br>Is Illegal."</h2>
+                <blockquote class="tl-quote">
+                  "The project is in violation of the California Environmental Quality Act."
+                  <cite>— Judge Toribio, Superior Court of California</cite>
+                </blockquote>
+                <p>In February 2011, Judge Toribio of the Superior Court of California ruled in favor of Friends of Whittier Narrows. The DC's Environmental Impact Report was found inadequate. The project was declared illegal.</p>
+                <p>The DC appealed. Friends continued to fight. The legal battle stretched on for years.</p>
+              </div>
+              <div class="tl-slide-media">
+                <div class="tl-slide-img-wrap">
+                  <img src="images/defendant.jpeg" alt="Courtroom scene during the Whittier Narrows legal trial, February 2011" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 6: VICTORY -->
+        <div class="tl-slide tl-slide--victory" data-index="6" id="tl-slide-6" role="tabpanel" aria-labelledby="tl-tab-6" aria-hidden="true">
+          <div class="tl-slide-inner">
+            <div class="tl-slide-content tl-slide-content--victory">
+              <div class="tl-slide-text">
+                <span class="tl-slide-chapter">Victory — 2014–2017</span>
+                <h2 class="tl-slide-heading tl-heading-victory">Nothing<br>Can Be Built.</h2>
+                <p>In 2014 and 2015, the Army Corps of Engineers announced that the Whittier Narrows Dam was structurally unsafe and needed to be reinforced to meet the new conditions brought by climate change in the San Gabriel Mountains and the San Gabriel River.</p>
+                <p>In 2017, the Corps made the final declaration: there would be no building. They said they had to protect habitat and that archaeological studies were needed. Most importantly, the current dam is a threat to the over one million people downstream.</p>
+                <div class="tl-victory-badge">
+                  2017 — Nothing Can Be Built. The Natural Area is Protected.
+                </div>
+              </div>
+              <div class="tl-slide-media tl-slide-media--victory">
+                <div class="tl-slide-img-wrap">
+                  <img src="images/WhitterNarrowsParkPhoto.png" alt="Whittier Narrows Natural Area wetlands and open space" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end .tl-track -->
+    </div><!-- end .tl-track-outer -->
+
+    <!-- Arrow navigation — inside track-outer so it's always visible within the slide area -->
+        <div class="tl-arrows" id="tl-arrows">
+      <button class="tl-arrow" id="tl-prev" aria-label="Previous timeline chapter" disabled aria-disabled="true">&#8592;</button>
+      <button class="tl-arrow" id="tl-next" aria-label="Next timeline chapter">&#8594;</button>
+    </div>
+  </section>
+  <!-- ============================================================
+       QUOTE SECTION
+       ============================================================ -->
+  <section id="quote" class="section-quote" aria-labelledby="quote-heading">
+    <!-- Flashlight effect layers -->
+    <div class="quote-bg-photo" aria-hidden="true"></div>
+    <canvas class="quote-flashlight-canvas" id="quote-flashlight-canvas" aria-hidden="true"></canvas>
+    <div class="section-inner">
+      <h2 class="sr-only" id="quote-heading">My Yosemite — a quote about Whittier Narrows</h2>
+      <p class="quote-mark" aria-hidden="true">&ldquo;</p>
+      <blockquote class="quote-text">
+        <span class="quote-word">My</span>
+        <span class="quote-word">Yosemite.</span>
+      </blockquote>
+      <p class="quote-attribution">— A local woman, describing Whittier Narrows</p>
+      <p class="quote-body">In the midst of overdeveloped Greater Los Angeles, there is a place where herons stand in still water, where coyotes move through tall grass, and where over 300 species of birds have found sanctuary. This is the story of the people who refused to let it disappear.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTRIBUTORS — Those Who Stood With Us
+       ============================================================ -->
+  <section id="contributors" class="section-contributors">
+    <div class="contributors-layout">
+
+      <!-- Left: accordion (60%) -->
+      <div class="contributors-accordion-col">
+        <span class="section-eyebrow">Those Who Stood With Us</span>
+        <h2 class="section-heading">The Community<br>That Refused to Yield.</h2>
+
+        <div class="contrib-accordion" role="region" aria-label="Contributor groups">
+
+          <div class="contrib-item contrib-item--active" data-index="0">
+            <button class="contrib-header" aria-expanded="true" aria-controls="contrib-panel-0" id="contrib-header-0">
+              <span class="contrib-num">01</span>
+              <span class="contrib-title">Scientists &amp; Biologists</span>
+              <span class="contrib-arrow">&#8595;</span>
+            </button>
+            <div class="contrib-body">
+              <p>University professors, professional biologists, and SEATAC committee members who documented the ecological importance of the Natural Area and testified to its irreplaceable value.</p>
+            </div>
+          </div>
+
+          <div class="contrib-item" data-index="1">
+            <button class="contrib-header" aria-expanded="false" aria-controls="contrib-panel-1" id="contrib-header-1">
+              <span class="contrib-num">02</span>
+              <span class="contrib-title">The Kizh Nation</span>
+              <span class="contrib-arrow">&#8595;</span>
+            </button>
+            <div class="contrib-body">
+              <p>The Gabrieле&#241;o Band of Mission Indians Kizh Nation, whose ancestral sacred land includes Whittier Narrows, joined the fight in 2010 and brought national attention to the cause.</p>
+            </div>
+          </div>
+
+          <div class="contrib-item" data-index="2">
+            <button class="contrib-header" aria-expanded="false">
+              <span class="contrib-num">03</span>
+              <span class="contrib-title">Students &amp; Artists</span>
+              <span class="contrib-arrow">&#8595;</span>
+            </button>
+            <div class="contrib-body">
+              <p>Young people, poets, and artists who organized art shows, poetry readings, and community picnics — turning a legal fight into a cultural movement rooted in the neighborhood.</p>
+            </div>
+          </div>
+
+          <div class="contrib-item" data-index="3">
+            <button class="contrib-header" aria-expanded="false">
+              <span class="contrib-num">04</span>
+              <span class="contrib-title">1,100 Neighbors</span>
+              <span class="contrib-arrow">&#8595;</span>
+            </button>
+            <div class="contrib-body">
+              <p>Over 1,100 residents who signed the petition, showed up to city council meetings, and carried hand-drawn signs that said what everyone felt: Save Whittier Narrows. I Speak for the Trees.</p>
+            </div>
+          </div>
+
+        </div><!-- .contrib-accordion -->
+      </div><!-- .contributors-accordion-col -->
+
+      <!-- Right: image panel (30%) -->
+      <div class="contributors-image-col">
+        <div class="contrib-image-panel">
+          <div class="contrib-img-slot contrib-img-slot--active" data-index="0">
+            <img src="images/elmonte.jpg" alt="Scientists and biologists at Whittier Narrows" loading="lazy" />
+          </div>
+          <div class="contrib-img-slot" data-index="1">
+            <img src="images/kizhcheif.jpeg" alt="Kizh Nation chief speaking about protecting sacred land at Whittier Narrows" loading="lazy" />
+          </div>
+          <div class="contrib-img-slot" data-index="2">
+            <img src="images/localYoungpeople.jpg" alt="Students and artists at Whittier Narrows" loading="lazy" style="object-position: 20% center;" />
+          </div>
+          <div class="contrib-img-slot" data-index="3">
+            <img src="images/youngProtestor.jpg" alt="Young protester holding a sign at Whittier Narrows" loading="lazy" />
+          </div>
+        </div>
+      </div><!-- .contributors-image-col -->
+
+    </div><!-- .contributors-layout -->
+  </section>
+
+  <!-- ============================================================
+       GALLERY
+       ============================================================ -->
+  <section id="gallery" class="section-gallery">
+    <div class="section-inner">
+      <span class="section-eyebrow">The Record</span>
+      <h2 class="section-heading">Gallery.</h2>
+      <!-- Mobile carousel controls (hidden on desktop) -->
+      <div class="gallery-carousel-wrap">
+      <button class="gallery-carousel-btn gallery-carousel-prev" id="gallery-carousel-prev" aria-label="Previous gallery image">&#8592;</button>
+      <button class="gallery-carousel-btn gallery-carousel-next" id="gallery-carousel-next" aria-label="Next gallery image">&#8594;</button>
+      <div class="gallery-grid" id="gallery-grid" role="group" aria-label="Historical photo gallery">
+        <div class="gallery-item" data-src="images/WhitterNarrowsParkPhoto.png">
+          <img src="images/WhitterNarrowsParkPhoto.png" alt="Whittier Narrows Natural Area wetlands and open space" loading="lazy" />
+          <div class="gallery-color"><img src="images/WhitterNarrowsParkPhoto.png" alt="" loading="lazy" /></div>
+        </div>
+        <div class="gallery-item" data-src="images/Bulldozers.jpg">
+          <img src="images/Bulldozers.jpg" alt="Protest sign reading Bulldozers for Children at Whittier Narrows" loading="lazy" />
+          <div class="gallery-color"><img src="images/Bulldozers.jpg" alt="" loading="lazy" /></div>
+        </div>
+        <div class="gallery-item" data-src="images/localYoungpeople.jpg">
+          <img src="images/localYoungpeople.jpg" alt="Local young people exploring Whittier Narrows Natural Area" loading="lazy" />
+          <div class="gallery-color"><img src="images/localYoungpeople.jpg" alt="" loading="lazy" /></div>
+        </div>
+        <div class="gallery-item" data-src="images/afterPicket.jpg">
+          <img src="images/afterPicket.jpg" alt="Community members gathered after a picket at Whittier Narrows" loading="lazy" />
+          <div class="gallery-color"><img src="images/afterPicket.jpg" alt="" loading="lazy" /></div>
+        </div>
+        <div class="gallery-item" data-src="images/kizhcheif.jpeg">
+          <img src="images/kizhcheif.jpeg" alt="Kizh Nation chief speaking about protecting sacred land at Whittier Narrows" loading="lazy" />
+          <div class="gallery-color"><img src="images/kizhcheif.jpeg" alt="" loading="lazy" /></div>
+        </div>
+        <div class="gallery-item" data-src="images/defendant.jpeg">
+          <img src="images/defendant.jpeg" alt="Courtroom scene during the Whittier Narrows legal trial, February 2011" loading="lazy" />
+          <div class="gallery-color"><img src="images/defendant.jpeg" alt="" loading="lazy" /></div>
+        </div>
+        <div class="gallery-item" data-src="images/Confronting-Supervisor.jpeg">
+          <img src="images/Confronting-Supervisor.jpeg" alt="Protesters confronting a county supervisor about Whittier Narrows development" loading="lazy" />
+          <div class="gallery-color"><img src="images/Confronting-Supervisor.jpeg" alt="" loading="lazy" /></div>
+        </div>
+        <div class="gallery-item" data-src="images/speakForTrees.jpg">
+          <img src="images/speakForTrees.jpg" alt="I Speak for the Trees — protest sign" loading="lazy" />
+          <div class="gallery-color"><img src="images/speakForTrees.jpg" alt="" loading="lazy" /></div>
+        </div>
+        <div class="gallery-item" data-src="images/portrait1.png">
+          <img src="images/portrait1.png" alt="Community member who supported protecting Whittier Narrows" loading="lazy" />
+          <div class="gallery-color"><img src="images/portrait1.png" alt="" loading="lazy" /></div>
+        </div>
+        <div class="gallery-item" data-src="images/landscape2.png">
+          <img src="images/landscape2.png" alt="Whittier Narrows landscape" loading="lazy" />
+          <div class="gallery-color"><img src="images/landscape2.png" alt="" loading="lazy" /></div>
+        </div>
+        <div class="gallery-item" data-src="images/elmonte.jpg">
+          <img src="images/elmonte.jpg" alt="Community members from El Monte at Whittier Narrows" loading="lazy" />
+          <div class="gallery-color"><img src="images/elmonte.jpg" alt="" loading="lazy" /></div>
+        </div>
+        <div class="gallery-item" data-src="images/youngProtestor.jpg">
+          <img src="images/youngProtestor.jpg" alt="Young protester holding a sign at Whittier Narrows" loading="lazy" />
+          <div class="gallery-color"><img src="images/youngProtestor.jpg" alt="" loading="lazy" /></div>
+        </div>
+        <div class="gallery-item" data-src="images/nature-center.jpeg">
+          <img src="images/nature-center.jpeg" alt="Whittier Narrows Nature Center" loading="lazy" />
+          <div class="gallery-color"><img src="images/nature-center.jpeg" alt="" loading="lazy" /></div>
+        </div>
+            </div><!-- /.gallery-grid -->
+      </div><!-- /.gallery-carousel-wrap -->
+      <div class="gallery-carousel-dots" id="gallery-carousel-dots"></div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" aria-describedby="lightbox-counter" hidden>
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    <h2 class="sr-only" id="lightbox-title">Enlarged gallery image</h2>
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close image viewer">&times;</button>
+    <button class="lightbox-arrow lightbox-prev" id="lightbox-prev" aria-label="Previous image">&#8592;</button>
+    <div class="lightbox-stage">
+      <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+    </div>
+    <button class="lightbox-arrow lightbox-next" id="lightbox-next" aria-label="Next image">&#8594;</button>
+    <div class="lightbox-counter" id="lightbox-counter" aria-live="polite">1 / 13</div>
+  </div>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <img src="images/birdsflying.gif" alt="" class="footer-birds" aria-hidden="true">
+    <div class="footer-inner">
+      
+      <div class="footer-content">
+        <h2 class="footer-title">Friends of Whittier Narrows</h2>
+        <p class="footer-about">Friends of the Whittier Narrows Natural Area was a California 501(c)(3) nonprofit active from 2007&ndash;2021. In 2017, its mission was achieved when the U.S. Army Corps of Engineers confirmed no development would be built in the Whittier Narrows Natural Area. This site serves as an archive of that achievement and the organization&#8217;s work to protect the area.</p>
+        <div class="footer-bottom-row">
+          <p class="footer-credit">Site Designed by <a href="https://helloitsmia.tech" target="_blank" rel="noopener noreferrer" aria-label="helloitsmia.tech (opens in new window)">helloitsmia.tech</a></p>
+          <nav class="footer-nav footer-nav--right" aria-label="Footer navigation">
+            <a href="#quote">Story</a>
+            <a href="#contributors">Contributors</a>
+            <a href="#gallery">The Photo Gallery</a>
+            <a href="accessibility.html">Accessibility</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
